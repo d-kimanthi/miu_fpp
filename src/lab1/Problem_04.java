@@ -2,11 +2,8 @@ package lab1;
 
 
 /*
-Problem – 4 – Practice loops
-a) Calculate the first N terms of the series: 1 – 1/3 + 1/5 – 1/7 + 1/9 -
-…..
-b) Calculate the first N terms of the series : 1/2 - 2/4 + 3/8 – 4/16 + 5/32 -
-…..
+    authors: @Jephthah David,  @Temuujin Bat-Amgalan
+    since: 2025-09-02
  */
 public class Problem_04 {
     public static void main(String[] args){

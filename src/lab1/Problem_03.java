@@ -2,6 +2,10 @@ package lab1;
 
 import java.util.Arrays;
 
+/*
+    authors: @Jephthah David,  @Temuujin Bat-Amgalan
+    since: 2025-09-02
+ */
 public class Problem_03 {
     public static void main(String[] args){
         String[] array = {"horse", "dog", "cat", "horse", "dog"};

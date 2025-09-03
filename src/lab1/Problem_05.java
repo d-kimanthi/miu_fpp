@@ -1,9 +1,13 @@
 package lab1;
 
+/*
+    authors: @Jephthah David,  @Temuujin Bat-Amgalan
+    since: 2025-09-02
+ */
 public class Problem_05 {
     public static void main(String[] args){
 
-        int[] array = {0, 21, 3, 45, 0, 12, 18, 6, 3, 1, 0, 22};
+        int[] array = {-10, 21, 3, 45, 12, 18, 6, 3, 0, 5, 0};
 
         secondMin(array);
     }
@@ -13,10 +17,11 @@ public class Problem_05 {
         int secondMin = arrayOfInts[0];
         for(int v: arrayOfInts){
             firstMin = Math.min(firstMin, v);
+        }
+        for(int v: arrayOfInts){
             if(firstMin == secondMin){
                 secondMin = v;
-            }
-            else if(v != firstMin){
+            }else if(firstMin != v){
                 secondMin = Math.min(secondMin, v);
             }
         }

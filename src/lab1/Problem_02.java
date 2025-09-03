@@ -1,6 +1,10 @@
 package lab1;
 
 
+/*
+    authors: @Jephthah David,  @Temuujin Bat-Amgalan
+    since: 2025-09-02
+ */
 public class Problem_02 {
 
     public static void main(String[] args) {

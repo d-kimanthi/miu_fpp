@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.random.RandomGenerator;
 
+/*
+    authors: @Jephthah David,  @Temuujin Bat-Amgalan
+    since: 2025-09-02
+ */
 public class QuickEmiQuote {
     public static void main(String[] args) {
         Random rm = new Random();
