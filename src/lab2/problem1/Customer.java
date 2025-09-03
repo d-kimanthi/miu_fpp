@@ -1,4 +1,4 @@
-package lab2;
+package lab2.problem1;
 
 public class Customer {
     private String firstName;
