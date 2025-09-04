@@ -1,14 +1,17 @@
 package lab2.problem2;
 
-import java.time.LocalDate;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 public class Event {
     private String name;
-    private LocalDate eventDate;
+    private LocalDateTime eventDate;
+    private String userTimeZone;
 
-    public Event (String name, LocalDate eventDate) {
+    public Event (String name, LocalDateTime eventDate, String tz) {
         this.name = name;
         this.eventDate = eventDate;
+        this.userTimeZone = tz;
 
     }
 
@@ -20,11 +23,44 @@ public class Event {
         this.name = name;
     }
 
-    public LocalDate getEventDate() {
+    public LocalDateTime getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(LocalDate eventDate) {
+    public void setEventDate(LocalDateTime eventDate) {
         this.eventDate = eventDate;
+    }
+
+    public String formatEventDetails() {
+        // Get system timezone dynamically
+        ZoneId systemZone = ZoneId.systemDefault();
+
+
+        // Create formatter with timezone
+//        String pattern = String.format("EEEE, MMMM d, yyyy '@' HH:mm '[%s]'", systemZone);
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+//
+//        String result = eventDate
+//                 .atTime(LocalTime.now())           // Use current time
+//                 .atZone(ZoneId.systemDefault())
+//                 .format(formatter);
+
+        return _formatDate(systemZone.toString());
+    }
+
+    public String timeZoneConversion(){
+        return _formatDate(userTimeZone);
+    }
+
+    private String _formatDate(String zone) {
+        // Create formatter with timezone
+        String pattern = String.format("EEEE, MMMM d, yyyy '@' HH:mm '[%s]'", zone);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+
+        return eventDate
+                .atZone(ZoneId.systemDefault())
+                .withZoneSameInstant(ZoneId.of(zone))
+                .format(formatter);
+
     }
 }
