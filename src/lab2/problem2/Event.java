@@ -35,16 +35,6 @@ public class Event {
         // Get system timezone dynamically
         ZoneId systemZone = ZoneId.systemDefault();
 
-
-        // Create formatter with timezone
-//        String pattern = String.format("EEEE, MMMM d, yyyy '@' HH:mm '[%s]'", systemZone);
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
-//
-//        String result = eventDate
-//                 .atTime(LocalTime.now())           // Use current time
-//                 .atZone(ZoneId.systemDefault())
-//                 .format(formatter);
-
         return _formatDate(systemZone.toString());
     }
 

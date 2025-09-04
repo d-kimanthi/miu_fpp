@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class TestEvent {
@@ -46,9 +47,9 @@ public class TestEvent {
         System.out.println("Event day of week: " + event.getEventDate().getDayOfWeek() + "\n");
         System.out.println("Is year Leap year: " + event.getEventDate().toLocalDate().isLeapYear() + "\n");
 
-        Period duration = Period.between(LocalDate.now(),event.getEventDate().toLocalDate());
+        long daysBetween = ChronoUnit.DAYS.between(LocalDate.now(), eventDate);
 
-        System.out.printf("The event is %d days away.\n",duration.getDays());
+        System.out.printf("The event is %d days away.\n",daysBetween);
 
         System.out.printf("Event date formatted in System TimeZone: %s\n",  event.formatEventDetails());
 
