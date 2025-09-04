@@ -29,6 +29,7 @@ public class TestEvent {
 
             System.out.println("Enter your preferred TimeZone in the format - {Region}/{City} e.g America/Chicago:");
             userTimeZone = sc.nextLine();
+            userTimeZone = (userTimeZone.isEmpty()) ? "America/Chicago" : userTimeZone;
 
             try {
                 eventDate = LocalDateTime.parse(date +" "+ time, formatter);
@@ -41,6 +42,7 @@ public class TestEvent {
         }
 
         //initialize event object
+
         Event event = new Event(eventName,eventDate,userTimeZone);
 
         System.out.println("Event date: " + event.getEventDate() +"\n");
