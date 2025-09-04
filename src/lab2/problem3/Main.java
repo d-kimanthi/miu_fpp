@@ -50,7 +50,7 @@ public class Main {
 
                 HotelBooking hotelBooking = new HotelBooking(hotelName, nights, pricePerNight);
 
-                System.out.printf("Estimated Flight Time: %.2f$\n", hotelBooking.totalCost());
+                System.out.printf("Total Hotel Cost: %.2f$\n", hotelBooking.totalCost());
 
             }else if (userChoice == 'C'){
                 System.out.println("1. Enter car model:");
