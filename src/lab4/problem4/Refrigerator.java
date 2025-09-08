@@ -11,4 +11,7 @@ public class Refrigerator implements Appliances {
     public void performFunction() {
         System.out.println("Cooling items at temperature: " + temperature + "°C.");
     }
+    public String getApllianceName(){
+        return this.getClass().getSimpleName();
+    }
 }

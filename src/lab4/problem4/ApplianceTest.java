@@ -8,7 +8,7 @@ public class ApplianceTest {
             new Microwave(800)
         };
         for (Appliances appliance : appliances) {
-            System.out.println(appliance.getClass().getSimpleName());
+            System.out.println(appliance.getApllianceName());
             appliance.performFunction();
         }
     }

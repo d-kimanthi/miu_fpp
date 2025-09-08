@@ -14,4 +14,7 @@ public class WashingMachine implements Appliances {
     public void performFunction() {
         System.out.println("Starting wash cycle with load capacity: " + loadCapacity + " kg.");
     }
+    public String getApllianceName(){
+        return this.getClass().getSimpleName();
+    }
 }
