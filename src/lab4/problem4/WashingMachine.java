@@ -1,6 +1,6 @@
 package lab4.problem4;
 
-public class WashingMachine  {
+public class WashingMachine implements Appliances {
     private int loadCapacity;
 
     public WashingMachine(int loadCapacity) {

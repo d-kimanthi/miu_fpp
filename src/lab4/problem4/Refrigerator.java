@@ -1,6 +1,6 @@
 package lab4.problem4;
 
-public class Refrigerator  {
+public class Refrigerator implements Appliances {
     private int temperature;
     public Refrigerator(int temperature) {
         this.temperature = temperature;

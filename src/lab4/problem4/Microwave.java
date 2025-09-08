@@ -1,6 +1,6 @@
 package lab4.problem4;
 
-public class Microwave {
+public class Microwave implements Appliances {
     private int powerLevel;
 
     public Microwave(int powerLevel) {
