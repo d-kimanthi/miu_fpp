@@ -43,7 +43,7 @@ public class EmployeeTest {
 
         for (Employee emp : col) {
             if (emp != null && emp.getPayment() < salary) {
-                count ++;
+                count++;
             }
         }
 
@@ -53,7 +53,7 @@ public class EmployeeTest {
         for (Employee emp : col) {
             if (emp != null && emp.getPayment() < salary) {
                 employees[count] = emp;
-                count ++;
+                count++;
             }
         }
 
