@@ -31,7 +31,9 @@ public class LightSensor implements Sensor{
 
     @Override
     public LocalDateTime getLastUpdated() {
-        return this.lastUpdated;
+        LocalDateTime currentTime = LocalDateTime.now();
+        setLastUpdated(currentTime);
+        return currentTime;
     }
 
     @Override

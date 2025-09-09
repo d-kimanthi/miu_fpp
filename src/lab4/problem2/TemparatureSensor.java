@@ -31,8 +31,11 @@ public class TemparatureSensor implements Sensor {
 
     @Override
     public LocalDateTime getLastUpdated() {
-        return this.lastUpdated;
+        LocalDateTime currentTime = LocalDateTime.now();
+        setLastUpdated(currentTime);
+        return currentTime;
     }
+
 
     @Override
     public String performAction() {

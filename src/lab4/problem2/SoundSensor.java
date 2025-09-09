@@ -31,8 +31,11 @@ public class SoundSensor implements Sensor {
 
     @Override
     public LocalDateTime getLastUpdated() {
-        return this.lastUpdated;
+        LocalDateTime currentTime = LocalDateTime.now();
+        setLastUpdated(currentTime);
+        return currentTime;
     }
+
 
     @Override
     public String performAction() {
@@ -46,6 +49,7 @@ public class SoundSensor implements Sensor {
     public void setLastUpdated(LocalDateTime lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
+
 
     public void setLocation(Location location) {
         this.location = location;
