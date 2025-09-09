@@ -17,6 +17,6 @@ public class Furniture extends Product {
 
     @Override
     public String toString() {
-        return "Furniture { name = "+ getProductName() + ", price= "+ getPrice() + ", material= " + material +", shippingCost= " + shippingCost + "}";
+        return "Furniture { name = "+ getProductName() + ", price= $"+ getPrice() + ", material= " + material +", shippingCost= " + shippingCost + "}";
     }
 }

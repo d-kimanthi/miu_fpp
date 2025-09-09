@@ -18,6 +18,6 @@ public class Clothing extends Product {
 
     @Override
     public String toString() {
-        return "Clothing { name = "+ getProductName() + ", price= "+ getPrice() + ", brand= " + brand +", discount= " + discount + "}";
+        return "Clothing { name = "+ getProductName() + ", price= $"+ getPrice() + ", brand= " + brand +", discount= " + discount + "}";
     }
 }

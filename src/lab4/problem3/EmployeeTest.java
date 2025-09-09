@@ -24,6 +24,7 @@ public class EmployeeTest {
 
         System.out.println("\nEmployees with salary less than $" + maxSalary + ":");
         System.out.println("========================================================");
+
         if (lowSalaryEmployees.length == 0) {
             System.out.println("None");
         } else {
@@ -38,8 +39,16 @@ public class EmployeeTest {
             return new Employee[0];
         }
 
-        Employee[] employees = new Employee[col.length];
         int count = 0;
+
+        for (Employee emp : col) {
+            if (emp != null && emp.getPayment() < salary) {
+                count ++;
+            }
+        }
+
+        Employee[] employees = new Employee[count];
+        count = 0;
 
         for (Employee emp : col) {
             if (emp != null && emp.getPayment() < salary) {
@@ -48,6 +57,6 @@ public class EmployeeTest {
             }
         }
 
-        return Arrays.copyOf(employees,count);
+        return employees;
     }
 }

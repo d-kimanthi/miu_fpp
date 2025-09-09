@@ -13,7 +13,7 @@ public class TestClass {
             System.out.println(p.toString());
         }
 
-        System.out.println("Sum of all products price: " + sumProducts(products));
+        System.out.println("Sum of all products price: $" + sumProducts(products));
     }
 
     public static double sumProducts(Product[] col) {

@@ -17,6 +17,6 @@ public class Electronics extends Product {
 
     @Override
     public String toString() {
-        return "Electronics { name = "+ getProductName() + ", price= "+ getPrice() + ", warrantyMonths= " + warrantyMonths +", warrantyCost= " + warrantyCost + "}";
+        return "Electronics { name = "+ getProductName() + ", price= $"+ getPrice() + ", warrantyMonths= " + warrantyMonths +", warrantyCost= " + warrantyCost + "}";
     }
 }
