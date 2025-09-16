@@ -1,4 +1,4 @@
-
+package lab6.prob1;
 
 import java.util.Arrays;
 
@@ -11,6 +11,67 @@ public class MyStringList {
 		strArray = new String[INITIAL_LENGTH];
 		size = 0;
 	}
+
+    // Assignment section start
+    public int indexOf(String s){
+        if(!s.isEmpty())
+            for(int i = 0; i < this.size; i++){
+                if(strArray[i].equals(s)) return i;
+            }
+        return -1;
+    }
+
+    public String removeAt(int index){
+        if(index < 0 || index > this.size - 1) return  null;
+
+        String res = this.strArray[index];
+        for(int i = index + 1; i < this.size; i++){
+            this.strArray[i - 1] = this.strArray[i];
+        }
+        this.strArray[this.size - 1] = null;
+        this.size--;
+        return res;
+    }
+
+    public void clear(){
+        for(int i = 0; i < this.size; i++){
+            this.strArray[i] = null;
+        }
+        this.size = 0;
+    }
+
+    public String set(int index, String s){
+        if(index < 0 || index > this.size -1) return null;
+        String old = this.strArray[index];
+        this.strArray[index] = s;
+        return old;
+    }
+
+    public boolean containsAll(MyStringList other){
+        if(other == null || other.size == 0 || this.strArray == null || this.size == 0) return false;
+
+        for(String _other : other.strArray){
+            boolean isFound = false;
+            for(int i = 0; i < size; i++){
+                if(this.strArray[i].equals(_other)){
+                    isFound = true;
+                    break;
+                }
+            }
+            if(!isFound) return false;
+        }
+
+        return true;
+    }
+
+    public MyStringList subList(int start, int end){
+        MyStringList answer = new MyStringList();
+        if(start >= end || start < 0 || end > this.size - 1) return answer;
+        for(int i = start; i < end; i++){
+            answer.add(this.strArray[i]);
+        }
+        return  answer;
+    }
 
 	// Add an element in last
 	public void add(String s) {
@@ -129,10 +190,10 @@ public class MyStringList {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder("[");
-		for (int i = 0; i < size - 1; ++i) {
-			sb.append(strArray[i] + ", ");
+		for (int i = 0; i < size; ++i) {
+			sb.append(strArray[i] + (i == size - 1 ? "" : ", "));
 		}
-		sb.append(strArray[size - 1] + "]");
+		sb.append("]");
 		return sb.toString();
 	}
 
@@ -156,17 +217,40 @@ public class MyStringList {
 		l.insert("Renuka", 4); // Position reached the length
 		l.insert("Mohanraj", 5); // Position reached the length
 		System.out.println(l);
-		l.add("Dave");
-		System.out.println("The list of size " + l.size() + " is " + l);
-		l.remove("Mark");
-		l.remove("Bob");
-		System.out.println("The list of size " + l.size() + " is " + l);
-		l.insert("Richard", 3);
-		System.out.println("The list of size " + l.size() + " after inserting Richard into pos 3 is " + l);
-		l.insert("Tonya", 0);
-		System.out.println("The list of size " + l.size() + " after inserting Tonya into pos 0 is " + l);
-		System.out.println(l.find("Susan"));
+		//l.add("Dave");
+		//System.out.println("The list of size " + l.size() + " is " + l);
+		//l.remove("Mark");
+		//l.remove("Bob");
+		//System.out.println("The list of size " + l.size() + " is " + l);
+		//l.insert("Richard", 3);
+		//System.out.println("The list of size " + l.size() + " after inserting Richard into pos 3 is " + l);
+		//l.insert("Tonya", 0);
+		//System.out.println("The list of size " + l.size() + " after inserting Tonya into pos 0 is " + l);
+		//System.out.println(l.find("Susan"));
 		// String[] x = (String[]) l.clone();
 		// System.out.println(Arrays.toString(x));
+
+        System.out.println(l.indexOf("Bob"));
+
+        System.out.println("RemoveAt: " + l.removeAt(0));
+
+        System.out.println("set: " + l.set(1, "Set"));
+
+        System.out.println("Contains all: " + l.containsAll(new MyStringList(){
+            {
+                add("Susan");
+                add("Mark");
+            }
+        }));
+
+        System.out.println("subList: " + l.subList(1,4));
+
+        System.out.println(l);
+
+        System.out.println("clearing...");
+        l.clear();
+
+        System.out.println(l);
+
 	}
 }
