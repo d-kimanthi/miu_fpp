@@ -12,6 +12,7 @@ public class OrderTest {
                 add(new Order("id3", "customer3", 55.3));
                 add(o1);
                 add(new Order("id7", "customer7", 123.5));
+                add(new Order("id77", "customer7", 123.5));
                 add(new Order("id1", "customer1", 26.1));
             }
         };
@@ -26,7 +27,9 @@ public class OrderTest {
         System.out.println(arr);
 
         List<Order> _new = listMoreThan50(arr);
-        _new.sort(Comparator.comparing(Order::getCustomerName));
+        _new.sort(Comparator.comparing(Order::getCustomerName)
+                .thenComparing(Order::getTotalAmount)
+                .thenComparing(Comparator.comparing(Order::getOrderId).reversed()));
         System.out.println(_new);
     }
 
