@@ -3,6 +3,13 @@ import java.util.*;
 public class Admin {
 	public static HashMap<Key, Student> processStudents(List<Student> students) {
 		//implement
-		return null;
+        if(students == null || students.isEmpty()) return null;
+
+        HashMap<Key, Student> result = new HashMap<>();
+        for(Student student: students){
+            result.put(new Key(student.getFirstName(), student.getLastName()), student);
+        }
+
+		return result;
 	}
 }
