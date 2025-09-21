@@ -1,4 +1,5 @@
-package lesson12.prob2;
+package lab9.prob2;
+
 public class CustomerAccount {
     private String cusName;
     private String accNo;
@@ -10,16 +11,20 @@ public class CustomerAccount {
         this.balance = balance;
     }
 
-    public boolean deposit(double amount) {
-        if (amount > 0) {
+    public boolean deposit(double amount) throws IllegalArgumentException {
+        if(amount <= 0 ) throw new IllegalArgumentException("Deposit amount cannot be below $0");
+        else if (amount > 0) {
             balance += amount;
             return true;
         }
         return false;
     }
 
-    public boolean withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
+    public boolean withdraw(double amount) throws AccountException, IllegalArgumentException {
+        if(amount <= 0) throw new IllegalArgumentException("Withdraw amount cannot be below $0");
+        else if(amount > balance) throw new AccountException("Insufficient funds! Withdrawal amount exceeds balance.");
+        else if (balance - amount <= 100) throw new AccountException("Low balance warning! Balance cannot go below $100.");
+        else if (amount > 0 && amount <= balance) {
             balance -= amount;
             return true;
         }
