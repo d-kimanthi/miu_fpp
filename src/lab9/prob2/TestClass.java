@@ -5,11 +5,31 @@ public class TestClass {
         CustomerAccount ca1 = new CustomerAccount("cusName-1", "accNo-1",200);
 
         // Invalid requests
-        //ca1.deposit(0);
-        //ca1.deposit(-10);
-        //ca1.withdraw(-10);
-        //ca1.withdraw(2000);
-        //ca1.withdraw(100);
+        try {
+            ca1.deposit(0);
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            ca1.deposit(-10);
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            ca1.withdraw(-10);
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            ca1.withdraw(2000);
+        }catch (AccountException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            ca1.withdraw(100);
+        }catch (AccountException e){
+            System.out.println(e.getMessage());
+        }
 
         // Valid requests
         ca1.deposit(10);
